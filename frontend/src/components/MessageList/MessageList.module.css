@@ -1,0 +1,150 @@
+.messages {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 35px 0 44px;
+  scroll-behavior: smooth;
+}
+
+.empty {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 280px;
+  padding: 30px;
+  text-align: center;
+}
+
+.welcomeIcon {
+  display: grid;
+  place-items: center;
+  width: 47px;
+  height: 47px;
+  margin-bottom: 19px;
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  color: var(--text-primary);
+  background: var(--bg-hover);
+}
+
+.empty h1 {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: clamp(22px, 3vw, 29px);
+  font-weight: 550;
+  letter-spacing: -0.05em;
+}
+
+.empty p {
+  max-width: 340px;
+  margin: 10px 0 0;
+  color: var(--text-secondary);
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  max-width: 530px;
+  margin-top: 22px;
+}
+
+.suggestions button {
+  min-height: 35px;
+  padding: 0 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 18px;
+  color: var(--text-secondary);
+  background: var(--bg-main);
+  font: inherit;
+  font-size: 11px;
+  cursor: pointer;
+  transition: var(--theme-transition), transform 140ms ease;
+}
+
+.suggestions button:hover {
+  color: var(--text-primary);
+  background: var(--bg-hover);
+  transform: translateY(-1px);
+}
+
+.loadingContainer {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+.loadingAvatar {
+  display: grid;
+  flex: 0 0 auto;
+  place-items: center;
+  width: 33px;
+  height: 33px;
+  border-radius: 12px;
+  color: var(--accent-foreground);
+  background: var(--accent-color);
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 0;
+}
+
+.loadingDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--text-secondary);
+  animation: pulse 1.3s infinite ease-in-out;
+}
+
+.loadingDot:nth-child(2) {
+  animation-delay: 0.18s;
+}
+
+.loadingDot:nth-child(3) {
+  animation-delay: 0.36s;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(0.75);
+    opacity: 0.4;
+  }
+
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 600px) {
+  .messages {
+    padding: 24px 0 30px;
+  }
+
+  .empty {
+    padding: 20px;
+  }
+
+  .loadingContainer {
+    padding: 0 17px;
+  }
+}

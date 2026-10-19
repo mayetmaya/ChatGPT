@@ -1,0 +1,118 @@
+.header {
+  z-index: 1;
+  display: flex;
+  flex: 0 0 58px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-primary);
+  background: var(--bg-main);
+  transition: var(--theme-transition);
+}
+
+.left,
+.right {
+  display: flex;
+  align-items: center;
+}
+
+.left {
+  gap: 10px;
+}
+
+.title {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.right {
+  gap: 10px;
+}
+
+.authActions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.authActions button {
+  min-height: 34px;
+  padding: 0 13px;
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+  color: var(--text-primary);
+  background: var(--bg-main);
+  font: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.authActions button:last-child {
+  border-color: var(--accent-color);
+  color: var(--accent-foreground);
+  background: var(--accent-color);
+}
+
+.greeting {
+  color: var(--text-secondary);
+  font-size: 11px;
+}
+
+.avatar {
+  display: grid;
+  place-items: center;
+  width: 29px;
+  height: 29px;
+  border-radius: 50%;
+  color: var(--accent-foreground);
+  background: var(--accent-color);
+  font-size: 10px;
+  font-weight: 650;
+}
+
+.menuButton,
+.themeButton {
+  display: grid;
+  place-items: center;
+  width: 35px;
+  height: 35px;
+  border: 0;
+  border-radius: 9px;
+  color: var(--text-secondary);
+  background: transparent;
+  cursor: pointer;
+  transition: var(--theme-transition);
+}
+
+.menuButton {
+  display: none;
+}
+
+.menuButton:hover,
+.themeButton:hover {
+  color: var(--text-primary);
+  background: var(--bg-hover);
+}
+
+@media (max-width: 760px) {
+  .header {
+    flex-basis: 54px;
+    padding: 0 12px;
+  }
+
+  .menuButton {
+    display: grid;
+    margin-left: -5px;
+  }
+
+  .left {
+    gap: 7px;
+  }
+
+  .greeting {
+    display: none;
+  }
+}

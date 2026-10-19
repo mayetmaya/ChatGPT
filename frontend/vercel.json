@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "https://generative-ai-umr0.onrender.com/api/$1"
+    }
+  ]
+}

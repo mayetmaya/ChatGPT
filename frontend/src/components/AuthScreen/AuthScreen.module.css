@@ -1,0 +1,233 @@
+.overlay {
+  position: fixed;
+  z-index: 10;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  overflow-y: auto;
+  background: rgba(0, 0, 0, 0.48);
+  backdrop-filter: blur(3px);
+}
+
+.dialog {
+  position: relative;
+  width: min(100%, 420px);
+  padding: 30px;
+  border: 1px solid var(--border-color);
+  border-radius: 18px;
+  color: var(--auth-text);
+  background: var(--auth-bg);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.24);
+}
+
+.close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border: 0;
+  border-radius: 9px;
+  color: var(--auth-muted);
+  background: transparent;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: var(--auth-text);
+  background: var(--auth-surface);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 30px;
+  font-size: 15px;
+  font-weight: 650;
+  letter-spacing: -0.025em;
+}
+
+.brandMark {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--auth-border);
+  border-radius: 11px;
+  color: var(--accent-color);
+  background: var(--auth-surface);
+}
+
+.formIcon {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  margin-bottom: 16px;
+  border-radius: 13px;
+  color: var(--accent-color);
+  background: var(--auth-surface);
+}
+
+.dialog h2 {
+  font-size: 26px;
+  letter-spacing: -0.045em;
+  font-weight: 620;
+}
+
+.subtitle {
+  margin-top: 8px;
+  color: var(--auth-muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.modeSwitch {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  margin-top: 23px;
+  padding: 4px;
+  border-radius: 10px;
+  background: var(--auth-surface);
+}
+
+.modeSwitch button {
+  min-height: 36px;
+  border: 0;
+  border-radius: 7px;
+  color: var(--auth-muted);
+  background: transparent;
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.modeSwitch button.modeActive {
+  color: var(--auth-text);
+  background: var(--auth-active);
+  box-shadow: 0 1px 3px rgba(34, 38, 32, 0.1);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 19px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  color: var(--auth-label);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.field input {
+  width: 100%;
+  height: 44px;
+  padding: 0 12px;
+  border: 1px solid var(--auth-border);
+  border-radius: 8px;
+  outline: none;
+  color: var(--auth-input-text);
+  background: var(--auth-field-bg);
+  font: inherit;
+  font-size: 13px;
+}
+
+.field input:focus {
+  border-color: #788e76;
+  box-shadow: 0 0 0 3px rgba(105, 133, 102, 0.13);
+}
+
+.field small {
+  color: var(--auth-muted);
+  font-size: 11px;
+  font-weight: 400;
+}
+
+.submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 45px;
+  margin-top: 2px;
+  border: 0;
+  border-radius: 8px;
+  color: white;
+  background: var(--accent-color);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.submit:hover:not(:disabled) {
+  background: var(--accent-hover);
+}
+
+.submit:disabled {
+  cursor: wait;
+  opacity: 0.68;
+}
+
+.switchPrompt {
+  margin-top: 19px;
+  color: var(--auth-muted);
+  text-align: center;
+  font-size: 12px;
+}
+
+.switchPrompt button {
+  padding: 0;
+  border: 0;
+  color: var(--accent-color);
+  background: none;
+  font: inherit;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.privacy {
+  margin-top: 21px;
+  color: var(--text-muted);
+  text-align: center;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.error,
+.notice {
+  margin-top: 13px;
+  padding: 10px 11px;
+  border: 1px solid var(--auth-error-border);
+  border-radius: 8px;
+  color: var(--auth-error-text);
+  background: color-mix(in srgb, var(--auth-bg) 85%, #d65c4a 15%);
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.notice {
+  border-color: var(--auth-border);
+  color: var(--auth-muted);
+  background: var(--auth-surface);
+}
+
+@media (max-width: 480px) {
+  .overlay {
+    padding: 14px;
+  }
+
+  .dialog {
+    padding: 24px 21px;
+  }
+}
